@@ -1,0 +1,39 @@
+<h1>New User</h1>
+
+<br>
+<div class="mt-5">
+	<%= form_with model: @client, url: sign_up_path, data: {turbo: false} do |f| %>
+		<% if @client.errors.any?%>
+			<div class="alert alert-danger">
+				<%@client.errors.full_messages.each do |message|%>
+					<div><%= message%></div>
+				<%end%>
+			</div>
+		<%end%>
+		
+		<div class="d-flex flex-column mb-3 justify-content-center align-items-center">
+			<div class="mb-1">
+				<%= f.text_field :first_name, class: "form-control", placeholder: 'Enter your first name' %><br>
+			</div>
+			<div class="mb-1">
+				<%= f.text_field :last_name,  class: "form-control", placeholder: 'Enter your last name' %><br>
+			</div>
+			
+			<div class="mb-1">
+				<%= f.text_field :username, class: "form-control", placeholder: 'Enter a username' %><br>
+			</div>
+			<div class="mb-1">
+				<%= f.password_field :password,  class: "form-control", placeholder: 'Enter a password' %><br>
+			</div>
+			<div class="mb-1">
+				<%= f.password_field :password_confirmation,  class: "form-control", placeholder: 'Confirm password' %><br>
+			</div>
+			<div class="mb-1">
+				<%= f.text_field :balance,  class: "form-control", placeholder: 'Enter a starting balance' %><br>
+			</div>
+			<div class="mb-2">
+				<%= f.submit "Sign Up!", class: "btn btn-primary" %>
+			</div>
+		</div>
+	<% end %>
+</div>

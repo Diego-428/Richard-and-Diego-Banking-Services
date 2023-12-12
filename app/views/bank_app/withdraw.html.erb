@@ -1,0 +1,26 @@
+<% if Current.client %>
+
+<div class="d-flex flex-column container-fluid mt-5">
+  <div class="row">
+    <!-- Left Part -->
+    <%= render partial: "shared/checking_sidebar"%>
+
+    <!-- Right Part -->
+	<div style="width: 50%">
+		<%= form_with model: @client, url: withdraw_path, data: {turbo: false} do |f| %>
+			<div class="d-flex flex-column align-items-center w-100">
+				<div>
+					<%= f.text_field :amount, class: "form-control", placeholder: 'Enter withdrawal amount', style: 'width: 100%' %><br>
+				</div>
+				<div class="d-flex align-items-center">
+					<div>
+						<%= f.submit "Confirm", class: "btn btn-primary" %>
+					</div>
+				</div>
+			</div>
+		<% end %>
+	</div>
+  </div>
+</div>
+
+<% end%>

@@ -1,0 +1,21 @@
+ <% if Current.client %>   
+	<div class="col-md-4">
+      <div class="card">
+        <div class="card-body p-0 d-flex flex-column">
+          <div class="bg-secondary-subtle">
+            <span class="p-1">Checking Number: <%= Current.client.account_number%></span>
+            <div class="d-flex flex-column align-items-end p-1">
+              <p>$<%= Current.client.balance%></p>
+              <p>Current Balance</p>
+            </div>
+          </div>
+          <div class="w-100 text-center mt-2">
+          <%= button_to 'Withdraw', withdraw_path, method: :get %>
+          </div>
+          <div class="w-100 text-center mt-2">
+          <%= button_to 'Deposit', deposit_path, method: :get %>
+          </div>
+        </div>
+      </div>
+    </div>
+<% end %>

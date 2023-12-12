@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Bank of PPL</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+		  <%= link_to "Home", root_path, class: "nav-link"%>
+        </li>
+        <li class="nav-item">
+          <%= link_to "About Us", about_path, class: "nav-link"%>
+        </li>
+        <li class="nav-item">
+		  <%= link_to "Taxes", "https://www.investopedia.com/terms/f/federal_income_tax.asp#:~:text=The%20United%20States%20uses%20a,taxes%20from%20higher%2Dincome%20individuals.", class: "nav-link"%>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 grid gap-3">
+        <% if Current.client%>
+          <li class="nav-item">
+            <span class="navbar-text"><%= Current.client %></span>
+          </li>
+          <li class="nav-item">
+            <%= button_to "Logout", logout_path, method: :delete%>
+          </li>
+          <% else %>
+          <li class="nav-item">
+            <%= link_to "Sign Up", sign_up_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Login", bank_app_index_path, class: "nav-link"%>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>
