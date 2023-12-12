@@ -13526,3 +13526,338 @@ Processing by BankAppController#index as TURBO_STREAM
 Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.0ms | Allocations: 3955)
 
 
+Started GET "/" for 127.0.0.1 at 2023-12-12 17:06:21 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BankAppController#index as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_client'
+Redirected to http://127.0.0.1:3000/bank_app/16
+Completed 302 Found in 244ms (ActiveRecord: 4.0ms | Allocations: 26050)
+
+
+Started GET "/bank_app/16" for 127.0.0.1 at 2023-12-12 17:06:22 -0500
+Processing by BankAppController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_client'
+  Rendering layout layouts/application.html.erb
+  Rendering bank_app/show.html.erb within layouts/application
+  Rendered shared/_checking_sidebar.html.erb (Duration: 0.8ms | Allocations: 384)
+  [1m[36mAccountTransaction Load (0.2ms)[0m  [1m[34mSELECT "account_transactions".* FROM "account_transactions" WHERE "account_transactions"."client_id" = ?[0m  [["client_id", 16]]
+  ↳ app/views/bank_app/show.html.erb:19
+  Rendered bank_app/show.html.erb within layouts/application (Duration: 90.6ms | Allocations: 12192)
+  Rendered shared/_navbar.html.erb (Duration: 1.7ms | Allocations: 531)
+  Rendered shared/_flash.html.erb (Duration: 0.9ms | Allocations: 211)
+  Rendered layout layouts/application.html.erb (Duration: 353.8ms | Allocations: 48194)
+Completed 200 OK in 455ms (Views: 380.9ms | ActiveRecord: 0.7ms | Allocations: 51941)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-12-12 17:07:26 -0500
+Processing by SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_client'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 849)
+
+
+Started GET "/" for 127.0.0.1 at 2023-12-12 17:07:26 -0500
+Processing by BankAppController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering bank_app/index.html.erb within layouts/application
+  Rendered bank_app/index.html.erb within layouts/application (Duration: 15.0ms | Allocations: 1748)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 101)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered layout layouts/application.html.erb (Duration: 18.8ms | Allocations: 3969)
+Completed 200 OK in 31ms (Views: 19.4ms | ActiveRecord: 0.0ms | Allocations: 4519)
+
+
+Started GET "/about" for 127.0.0.1 at 2023-12-12 17:08:04 -0500
+Processing by BankAppController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bank_app/about.html.erb within layouts/application
+  Rendered bank_app/about.html.erb within layouts/application (Duration: 0.6ms | Allocations: 122)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 114)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 2329)
+Completed 200 OK in 19ms (Views: 12.8ms | ActiveRecord: 0.0ms | Allocations: 2819)
+
+
+Started GET "/BankApp/app/assets/images/richard.JPG" for 127.0.0.1 at 2023-12-12 17:08:04 -0500
+Started GET "/person2.jpg" for 127.0.0.1 at 2023-12-12 17:08:04 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/BankApp/app/assets/images/richard.JPG"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/person2.jpg"):
+  
+Started GET "/BankApp/app/assets/images/richard.JPG" for 127.0.0.1 at 2023-12-12 17:08:05 -0500
+Started GET "/person2.jpg" for 127.0.0.1 at 2023-12-12 17:08:05 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/BankApp/app/assets/images/richard.JPG"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/person2.jpg"):
+  
+Started GET "/BankApp/app/assets/images/richard.JPG" for 127.0.0.1 at 2023-12-12 17:08:06 -0500
+Started GET "/person2.jpg" for 127.0.0.1 at 2023-12-12 17:08:06 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/person2.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/BankApp/app/assets/images/richard.JPG"):
+  
+Started GET "/" for 127.0.0.1 at 2023-12-12 17:08:09 -0500
+Started GET "/BankApp/app/assets/images/richard.JPG" for 127.0.0.1 at 2023-12-12 17:08:09 -0500
+Started GET "/person2.jpg" for 127.0.0.1 at 2023-12-12 17:08:09 -0500
+Processing by BankAppController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bank_app/index.html.erb within layouts/application
+  Rendered bank_app/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1191)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | Allocations: 3572)
+Completed 200 OK in 18ms (Views: 15.9ms | ActiveRecord: 0.0ms | Allocations: 4091)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/BankApp/app/assets/images/richard.JPG"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/person2.jpg"):
+  
+Started GET "/about" for 127.0.0.1 at 2023-12-12 17:08:11 -0500
+Processing by BankAppController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bank_app/about.html.erb within layouts/application
+  Rendered bank_app/about.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 112)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 2223)
+Completed 200 OK in 10ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 2660)
+
+
+Started GET "/BankApp/app/assets/images/richard.JPG" for 127.0.0.1 at 2023-12-12 17:08:11 -0500
+Started GET "/person2.jpg" for 127.0.0.1 at 2023-12-12 17:08:11 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/person2.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/BankApp/app/assets/images/richard.JPG"):
+  
+Started GET "/BankApp/app/assets/images/richard.JPG" for 127.0.0.1 at 2023-12-12 17:08:12 -0500
+Started GET "/person2.jpg" for 127.0.0.1 at 2023-12-12 17:08:12 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/BankApp/app/assets/images/richard.JPG"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/person2.jpg"):
+  
+Started GET "/about" for 127.0.0.1 at 2023-12-12 17:08:45 -0500
+Started GET "/BankApp/app/assets/images/richard.JPG" for 127.0.0.1 at 2023-12-12 17:08:45 -0500
+Started GET "/person2.jpg" for 127.0.0.1 at 2023-12-12 17:08:45 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/person2.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/BankApp/app/assets/images/richard.JPG"):
+  
+Processing by BankAppController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bank_app/about.html.erb within layouts/application
+  Rendered bank_app/about.html.erb within layouts/application (Duration: 0.7ms | Allocations: 376)
+  Rendered shared/_navbar.html.erb (Duration: 3.2ms | Allocations: 1020)
+  Rendered shared/_flash.html.erb (Duration: 0.8ms | Allocations: 191)
+  Rendered layout layouts/application.html.erb (Duration: 71.0ms | Allocations: 56343)
+Completed 200 OK in 86ms (Views: 77.4ms | ActiveRecord: 0.0ms | Allocations: 80041)
+
+
+Started GET "/BankApp/app/assets/images/richard.JPG" for 127.0.0.1 at 2023-12-12 17:08:46 -0500
+Started GET "/person2.jpg" for 127.0.0.1 at 2023-12-12 17:08:46 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/BankApp/app/assets/images/richard.JPG"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/person2.jpg"):
+  
+Started GET "/" for 127.0.0.1 at 2023-12-12 17:08:47 -0500
+Started GET "/BankApp/app/assets/images/richard.JPG" for 127.0.0.1 at 2023-12-12 17:08:47 -0500
+Processing by BankAppController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bank_app/index.html.erb within layouts/application
+  Rendered bank_app/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1452)
+Started GET "/person2.jpg" for 127.0.0.1 at 2023-12-12 17:08:47 -0500
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 4169)
+Completed 200 OK in 15ms (Views: 12.3ms | ActiveRecord: 0.0ms | Allocations: 4684)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/BankApp/app/assets/images/richard.JPG"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/person2.jpg"):
+  
+Started GET "/about" for 127.0.0.1 at 2023-12-12 17:08:49 -0500
+Processing by BankAppController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bank_app/about.html.erb within layouts/application
+  Rendered bank_app/about.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 114)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 2225)
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 0.0ms | Allocations: 2659)
+
+
+Started GET "/BankApp/app/assets/images/richard.JPG" for 127.0.0.1 at 2023-12-12 17:08:49 -0500
+Started GET "/person2.jpg" for 127.0.0.1 at 2023-12-12 17:08:49 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/BankApp/app/assets/images/richard.JPG"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/person2.jpg"):
+  
+Started GET "/" for 127.0.0.1 at 2023-12-12 17:08:50 -0500
+Started GET "/BankApp/app/assets/images/richard.JPG" for 127.0.0.1 at 2023-12-12 17:08:50 -0500
+Started GET "/person2.jpg" for 127.0.0.1 at 2023-12-12 17:08:50 -0500
+Processing by BankAppController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bank_app/index.html.erb within layouts/application
+  Rendered bank_app/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 1190)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 3654)
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 0.0ms | Allocations: 4105)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/person2.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/BankApp/app/assets/images/richard.JPG"):
+  
+Started POST "/bank_app" for 127.0.0.1 at 2023-12-12 17:08:55 -0500
+Processing by BankAppController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "username"=>"rohia", "password"=>"[FILTERED]", "commit"=>"Sign In!"}
+[31mUnpermitted parameters: :authenticity_token, :commit. Context: { controller: BankAppController, action: create, request: #<ActionDispatch::Request:0x000000011271f008>, params: {"authenticity_token"=>"[FILTERED]", "username"=>"rohia", "password"=>"[FILTERED]", "commit"=>"Sign In!", "controller"=>"bank_app", "action"=>"create"} }[0m
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."username" = ? LIMIT ?[0m  [["username", "rohia"], ["LIMIT", 1]]
+  ↳ app/controllers/bank_app_controller.rb:13:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 282ms (ActiveRecord: 4.8ms | Allocations: 6832)
+
+
+Started GET "/" for 127.0.0.1 at 2023-12-12 17:08:55 -0500
+Processing by BankAppController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bank_app/index.html.erb within layouts/application
+  Rendered bank_app/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 1190)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 3398)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.0ms | Allocations: 3857)
+
+
+Started POST "/bank_app" for 127.0.0.1 at 2023-12-12 17:09:02 -0500
+Processing by BankAppController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "username"=>"dt", "password"=>"[FILTERED]", "commit"=>"Sign In!"}
+[31mUnpermitted parameters: :authenticity_token, :commit. Context: { controller: BankAppController, action: create, request: #<ActionDispatch::Request:0x00000001131f15f8>, params: {"authenticity_token"=>"[FILTERED]", "username"=>"dt", "password"=>"[FILTERED]", "commit"=>"Sign In!", "controller"=>"bank_app", "action"=>"create"} }[0m
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."username" = ? LIMIT ?[0m  [["username", "dt"], ["LIMIT", 1]]
+  ↳ app/controllers/bank_app_controller.rb:13:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 840)
+
+
+Started GET "/" for 127.0.0.1 at 2023-12-12 17:09:02 -0500
+Processing by BankAppController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bank_app/index.html.erb within layouts/application
+  Rendered bank_app/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1189)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 99)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 3363)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms | Allocations: 3820)
+
+
+Started POST "/bank_app" for 127.0.0.1 at 2023-12-12 17:09:06 -0500
+Processing by BankAppController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "username"=>"Dt", "password"=>"[FILTERED]", "commit"=>"Sign In!"}
+[31mUnpermitted parameters: :authenticity_token, :commit. Context: { controller: BankAppController, action: create, request: #<ActionDispatch::Request:0x000000011337d020>, params: {"authenticity_token"=>"[FILTERED]", "username"=>"Dt", "password"=>"[FILTERED]", "commit"=>"Sign In!", "controller"=>"bank_app", "action"=>"create"} }[0m
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."username" = ? LIMIT ?[0m  [["username", "Dt"], ["LIMIT", 1]]
+  ↳ app/controllers/bank_app_controller.rb:13:in `create'
+Redirected to http://127.0.0.1:3000/bank_app/17
+Completed 302 Found in 259ms (ActiveRecord: 0.1ms | Allocations: 903)
+
+
+Started GET "/bank_app/17" for 127.0.0.1 at 2023-12-12 17:09:06 -0500
+Processing by BankAppController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_client'
+  Rendering layout layouts/application.html.erb
+  Rendering bank_app/show.html.erb within layouts/application
+  Rendered shared/_checking_sidebar.html.erb (Duration: 0.7ms | Allocations: 289)
+  [1m[36mAccountTransaction Load (0.1ms)[0m  [1m[34mSELECT "account_transactions".* FROM "account_transactions" WHERE "account_transactions"."client_id" = ?[0m  [["client_id", 17]]
+  ↳ app/views/bank_app/show.html.erb:19
+  Rendered bank_app/show.html.erb within layouts/application (Duration: 10.9ms | Allocations: 6763)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 180)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 16.2ms | Allocations: 9020)
+Completed 200 OK in 19ms (Views: 16.0ms | ActiveRecord: 0.6ms | Allocations: 10502)
+
+
+Started GET "/" for 127.0.0.1 at 2023-12-12 17:09:08 -0500
+Processing by BankAppController#index as HTML
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_client'
+Redirected to http://127.0.0.1:3000/bank_app/17
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 700)
+
+
+Started GET "/bank_app/17" for 127.0.0.1 at 2023-12-12 17:09:08 -0500
+Processing by BankAppController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_client'
+  Rendering layout layouts/application.html.erb
+  Rendering bank_app/show.html.erb within layouts/application
+  Rendered shared/_checking_sidebar.html.erb (Duration: 0.2ms | Allocations: 91)
+  [1m[36mAccountTransaction Load (0.1ms)[0m  [1m[34mSELECT "account_transactions".* FROM "account_transactions" WHERE "account_transactions"."client_id" = ?[0m  [["client_id", 17]]
+  ↳ app/views/bank_app/show.html.erb:19
+  Rendered bank_app/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 735)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 167)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 2973)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.2ms | Allocations: 3768)
+
+
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mAccountTransaction Load (0.3ms)[0m  [1m[34mSELECT "account_transactions".* FROM "account_transactions" WHERE "account_transactions"."client_id" IN (?, ?)[0m  [["client_id", 16], ["client_id", 17]]
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  [1m[36mAccountTransaction Load (0.2ms)[0m  [1m[34mSELECT "account_transactions".* FROM "account_transactions" WHERE "account_transactions"."client_id" IN (?, ?)[0m  [["client_id", 16], ["client_id", 17]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAccountTransaction Destroy (0.5ms)[0m  [1m[31mDELETE FROM "account_transactions" WHERE "account_transactions"."id" = ?[0m  [["id", 25]]
+  [1m[36mAccountTransaction Destroy (0.1ms)[0m  [1m[31mDELETE FROM "account_transactions" WHERE "account_transactions"."id" = ?[0m  [["id", 26]]
+  [1m[36mAccountTransaction Destroy (0.0ms)[0m  [1m[31mDELETE FROM "account_transactions" WHERE "account_transactions"."id" = ?[0m  [["id", 27]]
+  [1m[36mAccountTransaction Destroy (0.1ms)[0m  [1m[31mDELETE FROM "account_transactions" WHERE "account_transactions"."id" = ?[0m  [["id", 28]]
+  [1m[36mAccountTransaction Destroy (0.1ms)[0m  [1m[31mDELETE FROM "account_transactions" WHERE "account_transactions"."id" = ?[0m  [["id", 29]]
+  [1m[36mAccountTransaction Destroy (0.1ms)[0m  [1m[31mDELETE FROM "account_transactions" WHERE "account_transactions"."id" = ?[0m  [["id", 30]]
+  [1m[36mAccountTransaction Destroy (0.1ms)[0m  [1m[31mDELETE FROM "account_transactions" WHERE "account_transactions"."id" = ?[0m  [["id", 31]]
+  [1m[36mAccountTransaction Destroy (0.1ms)[0m  [1m[31mDELETE FROM "account_transactions" WHERE "account_transactions"."id" = ?[0m  [["id", 32]]
+  [1m[36mAccountTransaction Destroy (0.1ms)[0m  [1m[31mDELETE FROM "account_transactions" WHERE "account_transactions"."id" = ?[0m  [["id", 33]]
+  [1m[36mAccountTransaction Destroy (0.1ms)[0m  [1m[31mDELETE FROM "account_transactions" WHERE "account_transactions"."id" = ?[0m  [["id", 34]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAccountTransaction Destroy (0.4ms)[0m  [1m[31mDELETE FROM "account_transactions" WHERE "account_transactions"."id" = ?[0m  [["id", 35]]
+  [1m[36mAccountTransaction Destroy (0.1ms)[0m  [1m[31mDELETE FROM "account_transactions" WHERE "account_transactions"."id" = ?[0m  [["id", 36]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAccountTransaction Load (0.3ms)[0m  [1m[34mSELECT "account_transactions".* FROM "account_transactions" WHERE "account_transactions"."client_id" = ?[0m  [["client_id", 16]]
+  [1m[36mClient Destroy (0.1ms)[0m  [1m[31mDELETE FROM "clients" WHERE "clients"."id" = ?[0m  [["id", 16]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAccountTransaction Load (0.2ms)[0m  [1m[34mSELECT "account_transactions".* FROM "account_transactions" WHERE "account_transactions"."client_id" = ?[0m  [["client_id", 17]]
+  [1m[36mClient Destroy (0.1ms)[0m  [1m[31mDELETE FROM "clients" WHERE "clients"."id" = ?[0m  [["id", 17]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mClient Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "clients"[0m
