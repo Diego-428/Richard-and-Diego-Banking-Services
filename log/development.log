@@ -14972,3 +14972,91 @@ Processing by BankAppController#about as HTML
 Completed 200 OK in 18ms (Views: 10.9ms | ActiveRecord: 1.6ms | Allocations: 23372)
 
 
+Started GET "/about" for ::1 at 2023-12-13 13:55:20 -0500
+Processing by BankAppController#about as HTML
+  [1m[36mClient Load (0.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_client'
+  Rendering layout layouts/application.html.erb
+  Rendering bank_app/about.html.erb within layouts/application
+  Rendered bank_app/about.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1099)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 539)
+  Rendered shared/_flash.html.erb (Duration: 0.7ms | Allocations: 191)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 15333)
+Completed 200 OK in 25ms (Views: 18.3ms | ActiveRecord: 4.0ms | Allocations: 23074)
+
+
+Started DELETE "/logout" for ::1 at 2023-12-13 13:55:23 -0500
+Processing by SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_client'
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 805)
+
+
+Started GET "/" for ::1 at 2023-12-13 13:55:23 -0500
+Processing by BankAppController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering bank_app/index.html.erb within layouts/application
+  Rendered bank_app/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1444)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 101)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 3692)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.0ms | Allocations: 4239)
+
+
+Started GET "/" for ::1 at 2023-12-13 14:13:01 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BankAppController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bank_app/index.html.erb within layouts/application
+  Rendered bank_app/index.html.erb within layouts/application (Duration: 19.6ms | Allocations: 2072)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 441)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 216)
+  Rendered layout layouts/application.html.erb (Duration: 120.7ms | Allocations: 40618)
+Completed 200 OK in 329ms (Views: 161.8ms | ActiveRecord: 0.0ms | Allocations: 46332)
+
+
+Started GET "/sign_up" for ::1 at 2023-12-13 14:14:31 -0500
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 928)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 101)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 3112)
+Completed 200 OK in 139ms (Views: 13.8ms | ActiveRecord: 7.4ms | Allocations: 23646)
+
+
+Started GET "/" for ::1 at 2023-12-13 14:54:37 -0500
+Processing by BankAppController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bank_app/index.html.erb within layouts/application
+  Rendered bank_app/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 1442)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 416)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 191)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 15905)
+Completed 200 OK in 13ms (Views: 10.9ms | ActiveRecord: 0.0ms | Allocations: 17128)
+
+
+Started POST "/bank_app" for ::1 at 2023-12-13 14:54:41 -0500
+Processing by BankAppController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "username"=>"sdf", "password"=>"[FILTERED]", "commit"=>"Sign In!"}
+[31mUnpermitted parameters: :authenticity_token, :commit. Context: { controller: BankAppController, action: create, request: #<ActionDispatch::Request:0x0000000106f771d0>, params: {"authenticity_token"=>"[FILTERED]", "username"=>"sdf", "password"=>"[FILTERED]", "commit"=>"Sign In!", "controller"=>"bank_app", "action"=>"create"} }[0m
+  [1m[36mClient Load (2.9ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."username" = ? LIMIT ?[0m  [["username", "sdf"], ["LIMIT", 1]]
+  ↳ app/controllers/bank_app_controller.rb:13:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 74ms (ActiveRecord: 4.3ms | Allocations: 5418)
+
+
+Started GET "/" for ::1 at 2023-12-13 14:54:41 -0500
+Processing by BankAppController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bank_app/index.html.erb within layouts/application
+  Rendered bank_app/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1187)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 31)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 3374)
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.0ms | Allocations: 3829)
+
+
