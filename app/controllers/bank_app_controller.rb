@@ -1,5 +1,5 @@
 class BankAppController < ApplicationController
-  
+
   #GET    /bank_app
   def index
     if Current.client
@@ -11,14 +11,13 @@ class BankAppController < ApplicationController
   def create
     session_params = params.permit(:username, :password)
     @client = Client.find_by(username: session_params[:username])
-    
+
     if @client.present? && @client.authenticate(session_params[:password])
       puts "Hit"
       session[:client_id] = @client.id
       redirect_to bank_app_path(@client), notice: "Logged in successfully!"
     else
-      flash[:alert] = "Login is invalid!"
-      redirect_to root_path
+      redirect_to root_path, alert: "Login is invalid!"
     end
   end
 

@@ -20,7 +20,7 @@
 					  <tr>
             <td><%= t.created_at%></td>
             <td><%= t.transaction_type.capitalize%></td>
-            <td>$ include amount</td>
+            <td><%= t.amount%></td>
           </tr>
 				  <%end%>
         </tbody>
