@@ -15060,3 +15060,529 @@ Processing by BankAppController#index as HTML
 Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.0ms | Allocations: 3829)
 
 
+  [1m[36mClient Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "clients"[0m
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mAccountTransaction Load (0.6ms)[0m  [1m[34mSELECT "account_transactions".* FROM "account_transactions" WHERE "account_transactions"."client_id" IN (?, ?, ?)[0m  [["client_id", 18], ["client_id", 19], ["client_id", 20]]
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  [1m[36mAccountTransaction Load (0.4ms)[0m  [1m[34mSELECT "account_transactions".* FROM "account_transactions" WHERE "account_transactions"."client_id" IN (?, ?, ?)[0m  [["client_id", 18], ["client_id", 19], ["client_id", 20]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAccountTransaction Destroy (0.5ms)[0m  [1m[31mDELETE FROM "account_transactions" WHERE "account_transactions"."id" = ?[0m  [["id", 37]]
+  [1m[36mAccountTransaction Destroy (0.1ms)[0m  [1m[31mDELETE FROM "account_transactions" WHERE "account_transactions"."id" = ?[0m  [["id", 40]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAccountTransaction Destroy (0.3ms)[0m  [1m[31mDELETE FROM "account_transactions" WHERE "account_transactions"."id" = ?[0m  [["id", 38]]
+  [1m[36mAccountTransaction Destroy (0.1ms)[0m  [1m[31mDELETE FROM "account_transactions" WHERE "account_transactions"."id" = ?[0m  [["id", 39]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAccountTransaction Destroy (0.2ms)[0m  [1m[31mDELETE FROM "account_transactions" WHERE "account_transactions"."id" = ?[0m  [["id", 41]]
+  [1m[36mAccountTransaction Destroy (0.0ms)[0m  [1m[31mDELETE FROM "account_transactions" WHERE "account_transactions"."id" = ?[0m  [["id", 42]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAccountTransaction Load (0.3ms)[0m  [1m[34mSELECT "account_transactions".* FROM "account_transactions" WHERE "account_transactions"."client_id" = ?[0m  [["client_id", 18]]
+  [1m[36mClient Destroy (0.1ms)[0m  [1m[31mDELETE FROM "clients" WHERE "clients"."id" = ?[0m  [["id", 18]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAccountTransaction Load (0.2ms)[0m  [1m[34mSELECT "account_transactions".* FROM "account_transactions" WHERE "account_transactions"."client_id" = ?[0m  [["client_id", 19]]
+  [1m[36mClient Destroy (0.1ms)[0m  [1m[31mDELETE FROM "clients" WHERE "clients"."id" = ?[0m  [["id", 19]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAccountTransaction Load (0.1ms)[0m  [1m[34mSELECT "account_transactions".* FROM "account_transactions" WHERE "account_transactions"."client_id" = ?[0m  [["client_id", 20]]
+  [1m[36mClient Destroy (0.1ms)[0m  [1m[31mDELETE FROM "clients" WHERE "clients"."id" = ?[0m  [["id", 20]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mClient Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "clients"[0m
+Started GET "/" for 127.0.0.1 at 2023-12-13 22:25:21 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BankAppController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bank_app/index.html.erb within layouts/application
+  Rendered bank_app/index.html.erb within layouts/application (Duration: 17.1ms | Allocations: 2072)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 443)
+  Rendered shared/_flash.html.erb (Duration: 0.6ms | Allocations: 216)
+  Rendered layout layouts/application.html.erb (Duration: 410.0ms | Allocations: 45009)
+Completed 200 OK in 633ms (Views: 450.1ms | ActiveRecord: 0.0ms | Allocations: 50734)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2023-12-13 22:25:26 -0500
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 928)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 101)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 3113)
+Completed 200 OK in 92ms (Views: 8.2ms | ActiveRecord: 3.2ms | Allocations: 23651)
+
+
+Started GET "/" for 127.0.0.1 at 2023-12-13 22:30:29 -0500
+Processing by BankAppController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bank_app/index.html.erb within layouts/application
+  Rendered bank_app/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1191)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 99)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 3368)
+Completed 200 OK in 16ms (Views: 14.2ms | ActiveRecord: 0.0ms | Allocations: 3803)
+
+
+Started GET "/about" for 127.0.0.1 at 2023-12-13 22:30:31 -0500
+Processing by BankAppController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bank_app/about.html.erb within layouts/application
+  Rendered bank_app/about.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1082)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 114)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 3154)
+Completed 200 OK in 12ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 3648)
+
+
+Started GET "/" for 127.0.0.1 at 2023-12-13 22:30:42 -0500
+Processing by BankAppController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bank_app/index.html.erb within layouts/application
+  Rendered bank_app/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1189)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 99)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 3366)
+Completed 200 OK in 14ms (Views: 10.9ms | ActiveRecord: 0.0ms | Allocations: 3812)
+
+
+Started POST "/bank_app" for 127.0.0.1 at 2023-12-13 22:30:57 -0500
+Processing by BankAppController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "username"=>"lohia", "password"=>"[FILTERED]", "commit"=>"Sign In!"}
+[31mUnpermitted parameters: :authenticity_token, :commit. Context: { controller: BankAppController, action: create, request: #<ActionDispatch::Request:0x00000001099001f0>, params: {"authenticity_token"=>"[FILTERED]", "username"=>"lohia", "password"=>"[FILTERED]", "commit"=>"Sign In!", "controller"=>"bank_app", "action"=>"create"} }[0m
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."username" = ? LIMIT ?[0m  [["username", "lohia"], ["LIMIT", 1]]
+  ↳ app/controllers/bank_app_controller.rb:13:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 102ms (ActiveRecord: 0.2ms | Allocations: 3599)
+
+
+Started GET "/" for 127.0.0.1 at 2023-12-13 22:30:57 -0500
+Processing by BankAppController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bank_app/index.html.erb within layouts/application
+  Rendered bank_app/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1188)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 31)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 3391)
+Completed 200 OK in 13ms (Views: 11.6ms | ActiveRecord: 0.0ms | Allocations: 3864)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2023-12-13 22:31:01 -0500
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 422)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 2599)
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 0.0ms | Allocations: 3060)
+
+
+Started POST "/sign_up" for 127.0.0.1 at 2023-12-13 22:31:56 -0500
+Processing by RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "client"=>{"first_name"=>"Lauryn", "last_name"=>"Ohia", "username"=>"lohia", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "balance"=>""}, "commit"=>"Sign Up!"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/registrations_controller.rb:11:in `block in create'
+  [1m[36mClient Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "clients" WHERE "clients"."account_number" = ? LIMIT ?[0m  [["account_number", "c9f6ecb80e"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:11:in `block in create'
+  [1m[36mClient Create (1.4ms)[0m  [1m[32mINSERT INTO "clients" ("first_name", "last_name", "username", "balance", "account_number", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["first_name", "Lauryn"], ["last_name", "Ohia"], ["username", "lohia"], ["balance", "0.0"], ["account_number", "c9f6ecb80e"], ["created_at", "2023-12-13 22:31:57.192865"], ["updated_at", "2023-12-13 22:31:57.192865"], ["password_digest", "[FILTERED]"]]
+  ↳ app/controllers/registrations_controller.rb:11:in `block in create'
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/registrations_controller.rb:11:in `block in create'
+Redirected to http://127.0.0.1:3000/bank_app/21
+Completed 302 Found in 268ms (ActiveRecord: 4.9ms | Allocations: 4456)
+
+
+Started GET "/bank_app/21" for 127.0.0.1 at 2023-12-13 22:31:57 -0500
+Processing by BankAppController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_client'
+  Rendering layout layouts/application.html.erb
+  Rendering bank_app/show.html.erb within layouts/application
+  Rendered shared/_checking_sidebar.html.erb (Duration: 0.7ms | Allocations: 307)
+  [1m[36mAccountTransaction Load (0.1ms)[0m  [1m[34mSELECT "account_transactions".* FROM "account_transactions" WHERE "account_transactions"."client_id" = ?[0m  [["client_id", 21]]
+  ↳ app/views/bank_app/show.html.erb:19
+  Rendered bank_app/show.html.erb within layouts/application (Duration: 89.3ms | Allocations: 11115)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 179)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 94.7ms | Allocations: 13379)
+Completed 200 OK in 103ms (Views: 94.7ms | ActiveRecord: 0.6ms | Allocations: 14900)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-12-13 22:32:06 -0500
+Processing by SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_client'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 800)
+
+
+Started GET "/" for 127.0.0.1 at 2023-12-13 22:32:06 -0500
+Processing by BankAppController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering bank_app/index.html.erb within layouts/application
+  Rendered bank_app/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1187)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 3413)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.0ms | Allocations: 3906)
+
+
+  [1m[36mClient Delete All (0.3ms)[0m  [1m[31mDELETE FROM "clients"[0m
+  [1m[36mClient Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "clients"[0m
+Started GET "/sign_up" for 127.0.0.1 at 2023-12-13 22:34:06 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 7.3ms | Allocations: 1541)
+  Rendered shared/_navbar.html.erb (Duration: 2.0ms | Allocations: 640)
+  Rendered shared/_flash.html.erb (Duration: 0.4ms | Allocations: 216)
+  Rendered layout layouts/application.html.erb (Duration: 91.5ms | Allocations: 37931)
+Completed 200 OK in 181ms (Views: 99.8ms | ActiveRecord: 4.0ms | Allocations: 63345)
+
+
+Started POST "/sign_up" for 127.0.0.1 at 2023-12-13 22:34:21 -0500
+Processing by RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "client"=>{"first_name"=>"Richard", "last_name"=>"", "username"=>"rohia", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "balance"=>"10"}, "commit"=>"Sign Up!"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/registrations_controller.rb:11:in `block in create'
+  [1m[36mClient Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "clients" WHERE "clients"."account_number" = ? LIMIT ?[0m  [["account_number", "91633ba68d"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:11:in `block in create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/registrations_controller.rb:11:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1247)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 101)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 3422)
+Completed 422 Unprocessable Entity in 284ms (Views: 6.4ms | ActiveRecord: 1.2ms | Allocations: 9383)
+
+
+Started POST "/sign_up" for 127.0.0.1 at 2023-12-13 22:34:49 -0500
+Processing by RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "client"=>{"first_name"=>"", "last_name"=>"", "username"=>"rohia", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "balance"=>"10.0"}, "commit"=>"Sign Up!"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/registrations_controller.rb:11:in `block in create'
+  [1m[36mClient Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "clients" WHERE "clients"."account_number" = ? LIMIT ?[0m  [["account_number", "1a8f606bf3"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:11:in `block in create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/registrations_controller.rb:11:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 2080)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 101)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 4255)
+Completed 422 Unprocessable Entity in 11ms (Views: 5.8ms | ActiveRecord: 1.2ms | Allocations: 6941)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2023-12-13 22:34:54 -0500
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 422)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 101)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 2635)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms | Allocations: 3102)
+
+
+Started POST "/sign_up" for 127.0.0.1 at 2023-12-13 22:35:08 -0500
+Processing by RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "client"=>{"first_name"=>"", "last_name"=>"", "username"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "balance"=>""}, "commit"=>"Sign Up!"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/registrations_controller.rb:11:in `block in create'
+  [1m[36mClient Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "clients" WHERE "clients"."account_number" = ? LIMIT ?[0m  [["account_number", "160fae9f2c"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:11:in `block in create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/registrations_controller.rb:11:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 2561)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 4744)
+Completed 422 Unprocessable Entity in 12ms (Views: 8.4ms | ActiveRecord: 1.1ms | Allocations: 7398)
+
+
+Started POST "/sign_up" for 127.0.0.1 at 2023-12-13 22:36:01 -0500
+Processing by RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "client"=>{"first_name"=>"Richard", "last_name"=>"Ohia", "username"=>"rohia", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "balance"=>"0.0"}, "commit"=>"Sign Up!"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/registrations_controller.rb:11:in `block in create'
+  [1m[36mClient Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "clients" WHERE "clients"."account_number" = ? LIMIT ?[0m  [["account_number", "4a60a79963"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:11:in `block in create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/registrations_controller.rb:11:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1034)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 101)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 16.4ms | Allocations: 3209)
+Completed 422 Unprocessable Entity in 274ms (Views: 16.9ms | ActiveRecord: 1.2ms | Allocations: 5927)
+
+
+Started POST "/sign_up" for 127.0.0.1 at 2023-12-13 22:36:37 -0500
+Processing by RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "client"=>{"first_name"=>"Richard", "last_name"=>"Ohia", "username"=>"rohia", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "balance"=>"100"}, "commit"=>"Sign Up!"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/registrations_controller.rb:11:in `block in create'
+  [1m[36mClient Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "clients" WHERE "clients"."account_number" = ? LIMIT ?[0m  [["account_number", "8c6e5b4e31"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:11:in `block in create'
+  [1m[36mClient Create (4.5ms)[0m  [1m[32mINSERT INTO "clients" ("first_name", "last_name", "username", "balance", "account_number", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["first_name", "Richard"], ["last_name", "Ohia"], ["username", "rohia"], ["balance", "100.0"], ["account_number", "8c6e5b4e31"], ["created_at", "2023-12-13 22:36:38.212624"], ["updated_at", "2023-12-13 22:36:38.212624"], ["password_digest", "[FILTERED]"]]
+  ↳ app/controllers/registrations_controller.rb:11:in `block in create'
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/registrations_controller.rb:11:in `block in create'
+Redirected to http://127.0.0.1:3000/bank_app/22
+Completed 302 Found in 269ms (ActiveRecord: 8.1ms | Allocations: 3759)
+
+
+Started GET "/bank_app/22" for 127.0.0.1 at 2023-12-13 22:36:38 -0500
+Processing by BankAppController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_client'
+  Rendering layout layouts/application.html.erb
+  Rendering bank_app/show.html.erb within layouts/application
+  Rendered shared/_checking_sidebar.html.erb (Duration: 0.8ms | Allocations: 313)
+  [1m[36mAccountTransaction Load (0.1ms)[0m  [1m[34mSELECT "account_transactions".* FROM "account_transactions" WHERE "account_transactions"."client_id" = ?[0m  [["client_id", 22]]
+  ↳ app/views/bank_app/show.html.erb:19
+  Rendered bank_app/show.html.erb within layouts/application (Duration: 101.7ms | Allocations: 5603)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 181)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 106.5ms | Allocations: 7886)
+Completed 200 OK in 117ms (Views: 107.4ms | ActiveRecord: 0.6ms | Allocations: 9661)
+
+
+Started GET "/withdraw" for 127.0.0.1 at 2023-12-13 22:36:40 -0500
+Processing by BankAppController#withdraw as HTML
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_client'
+  Rendering layout layouts/application.html.erb
+  Rendering bank_app/withdraw.html.erb within layouts/application
+  Rendered shared/_checking_sidebar.html.erb (Duration: 0.4ms | Allocations: 91)
+  Rendered bank_app/withdraw.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1122)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 167)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 3367)
+Completed 200 OK in 18ms (Views: 8.4ms | ActiveRecord: 0.1ms | Allocations: 4213)
+
+
+Started GET "/deposit" for 127.0.0.1 at 2023-12-13 22:36:42 -0500
+Processing by BankAppController#deposit as HTML
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_client'
+  Rendering layout layouts/application.html.erb
+  Rendering bank_app/deposit.html.erb within layouts/application
+  Rendered shared/_checking_sidebar.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered bank_app/deposit.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1107)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 167)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 3352)
+Completed 200 OK in 16ms (Views: 7.1ms | ActiveRecord: 0.1ms | Allocations: 4200)
+
+
+Started POST "/deposit" for 127.0.0.1 at 2023-12-13 22:36:47 -0500
+Processing by BankAppController#set_deposit as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "amount"=>"-2", "commit"=>"Confirm"}
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_client'
+[31mUnpermitted parameters: :authenticity_token, :commit. Context: { controller: BankAppController, action: set_deposit, request: #<ActionDispatch::Request:0x00000001110dc638>, params: {"authenticity_token"=>"[FILTERED]", "amount"=>"-2", "commit"=>"Confirm", "controller"=>"bank_app", "action"=>"set_deposit"} }[0m
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 904)
+
+
+Started GET "/" for 127.0.0.1 at 2023-12-13 22:36:47 -0500
+Processing by BankAppController#index as HTML
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_client'
+Redirected to http://127.0.0.1:3000/bank_app/22
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 697)
+
+
+Started GET "/bank_app/22" for 127.0.0.1 at 2023-12-13 22:36:47 -0500
+Processing by BankAppController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_client'
+  Rendering layout layouts/application.html.erb
+  Rendering bank_app/show.html.erb within layouts/application
+  Rendered shared/_checking_sidebar.html.erb (Duration: 0.2ms | Allocations: 91)
+  [1m[36mAccountTransaction Load (0.0ms)[0m  [1m[34mSELECT "account_transactions".* FROM "account_transactions" WHERE "account_transactions"."client_id" = ?[0m  [["client_id", 22]]
+  ↳ app/views/bank_app/show.html.erb:19
+  Rendered bank_app/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 648)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 167)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 2899)
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.1ms | Allocations: 3693)
+
+
+Started GET "/withdraw" for 127.0.0.1 at 2023-12-13 22:36:53 -0500
+Processing by BankAppController#withdraw as HTML
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_client'
+  Rendering layout layouts/application.html.erb
+  Rendering bank_app/withdraw.html.erb within layouts/application
+  Rendered shared/_checking_sidebar.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered bank_app/withdraw.html.erb within layouts/application (Duration: 0.8ms | Allocations: 873)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 167)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 3118)
+Completed 200 OK in 11ms (Views: 7.8ms | ActiveRecord: 0.1ms | Allocations: 3895)
+
+
+Started POST "/withdraw" for 127.0.0.1 at 2023-12-13 22:36:56 -0500
+Processing by BankAppController#set_withdraw as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "amount"=>"-2", "commit"=>"Confirm"}
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_client'
+[31mUnpermitted parameters: :authenticity_token, :commit. Context: { controller: BankAppController, action: set_withdraw, request: #<ActionDispatch::Request:0x0000000112b44610>, params: {"authenticity_token"=>"[FILTERED]", "amount"=>"-2", "commit"=>"Confirm", "controller"=>"bank_app", "action"=>"set_withdraw"} }[0m
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.1ms | Allocations: 849)
+
+
+Started GET "/" for 127.0.0.1 at 2023-12-13 22:36:56 -0500
+Processing by BankAppController#index as HTML
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_client'
+Redirected to http://127.0.0.1:3000/bank_app/22
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 715)
+
+
+Started GET "/bank_app/22" for 127.0.0.1 at 2023-12-13 22:36:56 -0500
+Processing by BankAppController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_client'
+  Rendering layout layouts/application.html.erb
+  Rendering bank_app/show.html.erb within layouts/application
+  Rendered shared/_checking_sidebar.html.erb (Duration: 0.2ms | Allocations: 91)
+  [1m[36mAccountTransaction Load (0.0ms)[0m  [1m[34mSELECT "account_transactions".* FROM "account_transactions" WHERE "account_transactions"."client_id" = ?[0m  [["client_id", 22]]
+  ↳ app/views/bank_app/show.html.erb:19
+  Rendered bank_app/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 648)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 167)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 2933)
+Completed 200 OK in 8ms (Views: 6.0ms | ActiveRecord: 0.1ms | Allocations: 3747)
+
+
+Started GET "/withdraw" for 127.0.0.1 at 2023-12-13 22:37:17 -0500
+Processing by BankAppController#withdraw as HTML
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_client'
+  Rendering layout layouts/application.html.erb
+  Rendering bank_app/withdraw.html.erb within layouts/application
+  Rendered shared/_checking_sidebar.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered bank_app/withdraw.html.erb within layouts/application (Duration: 0.7ms | Allocations: 874)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 167)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 3129)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.1ms | Allocations: 3918)
+
+
+Started GET "/deposit" for 127.0.0.1 at 2023-12-13 22:37:20 -0500
+Processing by BankAppController#deposit as HTML
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_client'
+  Rendering layout layouts/application.html.erb
+  Rendering bank_app/deposit.html.erb within layouts/application
+  Rendered shared/_checking_sidebar.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered bank_app/deposit.html.erb within layouts/application (Duration: 1.1ms | Allocations: 873)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 167)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 3118)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.1ms | Allocations: 3913)
+
+
+Started POST "/deposit" for 127.0.0.1 at 2023-12-13 22:37:52 -0500
+Processing by BankAppController#set_deposit as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "amount"=>"-10", "commit"=>"Confirm"}
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_client'
+[31mUnpermitted parameters: :authenticity_token, :commit. Context: { controller: BankAppController, action: set_deposit, request: #<ActionDispatch::Request:0x0000000112a26af8>, params: {"authenticity_token"=>"[FILTERED]", "amount"=>"-10", "commit"=>"Confirm", "controller"=>"bank_app", "action"=>"set_deposit"} }[0m
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 849)
+
+
+Started GET "/" for 127.0.0.1 at 2023-12-13 22:37:52 -0500
+Processing by BankAppController#index as HTML
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_client'
+Redirected to http://127.0.0.1:3000/bank_app/22
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 699)
+
+
+Started GET "/bank_app/22" for 127.0.0.1 at 2023-12-13 22:37:52 -0500
+Processing by BankAppController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_client'
+  Rendering layout layouts/application.html.erb
+  Rendering bank_app/show.html.erb within layouts/application
+  Rendered shared/_checking_sidebar.html.erb (Duration: 0.2ms | Allocations: 91)
+  [1m[36mAccountTransaction Load (0.0ms)[0m  [1m[34mSELECT "account_transactions".* FROM "account_transactions" WHERE "account_transactions"."client_id" = ?[0m  [["client_id", 22]]
+  ↳ app/views/bank_app/show.html.erb:19
+  Rendered bank_app/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 648)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 167)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 2899)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.1ms | Allocations: 3699)
+
+
+Started GET "/withdraw" for 127.0.0.1 at 2023-12-13 22:38:08 -0500
+Processing by BankAppController#withdraw as HTML
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_client'
+  Rendering layout layouts/application.html.erb
+  Rendering bank_app/withdraw.html.erb within layouts/application
+  Rendered shared/_checking_sidebar.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered bank_app/withdraw.html.erb within layouts/application (Duration: 0.7ms | Allocations: 873)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 167)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 3118)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.1ms | Allocations: 3913)
+
+
+Started POST "/withdraw" for 127.0.0.1 at 2023-12-13 22:38:26 -0500
+Processing by BankAppController#set_withdraw as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "amount"=>"1000", "commit"=>"Confirm"}
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_client'
+[31mUnpermitted parameters: :authenticity_token, :commit. Context: { controller: BankAppController, action: set_withdraw, request: #<ActionDispatch::Request:0x000000011260ed80>, params: {"authenticity_token"=>"[FILTERED]", "amount"=>"1000", "commit"=>"Confirm", "controller"=>"bank_app", "action"=>"set_withdraw"} }[0m
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.1ms | Allocations: 832)
+
+
+Started GET "/" for 127.0.0.1 at 2023-12-13 22:38:26 -0500
+Processing by BankAppController#index as HTML
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_client'
+Redirected to http://127.0.0.1:3000/bank_app/22
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 696)
+
+
+Started GET "/bank_app/22" for 127.0.0.1 at 2023-12-13 22:38:26 -0500
+Processing by BankAppController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_client'
+  Rendering layout layouts/application.html.erb
+  Rendering bank_app/show.html.erb within layouts/application
+  Rendered shared/_checking_sidebar.html.erb (Duration: 0.2ms | Allocations: 91)
+  [1m[36mAccountTransaction Load (0.0ms)[0m  [1m[34mSELECT "account_transactions".* FROM "account_transactions" WHERE "account_transactions"."client_id" = ?[0m  [["client_id", 22]]
+  ↳ app/views/bank_app/show.html.erb:19
+  Rendered bank_app/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 648)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 167)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 2900)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.1ms | Allocations: 3715)
+
+
+  [1m[36mClient Delete All (1.6ms)[0m  [1m[31mDELETE FROM "clients"[0m
+  [1m[36mClient Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "clients"[0m
